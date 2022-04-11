@@ -13,7 +13,7 @@ const cache = apicache.middleware;
 app.use(cors());
 app.use(express.json());
 app.use(helmet());
-// app.use(cache("10 minutes"));
+app.use(cache("10 minutes"));
 
 const limiter = rateLimit({
   windowMs: 24 * 60 * 60 * 1000,

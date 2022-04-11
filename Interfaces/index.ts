@@ -43,10 +43,10 @@ export interface IUser {
   email: string;
   name: String;
   username: String;
-  address: Address;
+  address?: Address;
   phone: Number;
-  website: String;
-  company: Company;
+  website?: String;
+  company?: Company;
   hash_password: string;
 }
 
@@ -70,12 +70,12 @@ export interface IIP {
     regionName: String;
     city: String;
     zip: String;
-    lat: Number;
-    lon: Number;
+    lat: Number | string;
+    lon: Number | string;
     timezone: String;
     isp: String;
-    org: String;
-    as: String;
+    org?: String;
+    as?: String;
     query: String;
   };
 }

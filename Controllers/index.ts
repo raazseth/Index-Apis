@@ -274,7 +274,7 @@ export const getIpDetails = async (req: Request, res: Response) => {
   res.status(200).json(IP_Details.data);
 };
 
-export const serveProxy = (req: Request<{ url: String }>, res: Response) => {
+export const serveProxy = (req: Request, res: Response) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Methods", "GET, PUT, PATCH, POST, DELETE");
   res.header(
@@ -289,7 +289,7 @@ export const serveProxy = (req: Request<{ url: String }>, res: Response) => {
     if (!targetURL) {
       return res
         .status(200)
-        .json({ error: "There is no Target-Endpoint header in the request" });
+        .json({ message: "There is no Target URL header in the request" });
     } else {
       request(
         {
