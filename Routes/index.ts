@@ -4,6 +4,7 @@ import {
   addPosts,
   addStateNCity,
   addTodo,
+  api_Guide,
   getAllComments,
   getAllPosts,
   getAllStatesNCities,
@@ -27,6 +28,7 @@ router.post("/add/StateNCity", addStateNCity);
 
 ///Get///
 
+router.get("/", api_Guide);
 router.get("/get/Todo", getAllTodo);
 router.get("/get/Todo/:userId", getTodoByUser);
 router.get("/get/Post", getAllPosts);
@@ -34,9 +36,9 @@ router.get("/get/Post/:userId", getUserPosts);
 router.get("/get/Comment", getAllComments);
 router.get("/get/Post/Comment/:postId", getPostComments);
 router.get("/get/Comment/:userId", getUserComments);
-router.get("/get/State/:state", getCityByState);
 router.get("/get/States", getAllStatesNCities);
+router.get("/get/State/:state", getCityByState);
 router.get("/get/IP", getIpDetails);
-router.get("/serve", serveProxy);
+router.all("/serve", serveProxy);
 
 module.exports = router;

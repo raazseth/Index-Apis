@@ -309,3 +309,294 @@ export const serveProxy = (req: Request, res: Response) => {
     }
   }
 };
+
+export const api_Guide = (req: Request, res: Response) => {
+  const data = {
+    version: "1.1.0",
+    info: {
+      title: "INDEX_APIs",
+      description:
+        "This is a collection of APIs that are used to perform CRUD operations on the database.",
+      why: "I wanted to create a collection of APIs that can be used to perform CRUD operations on the database to test thier skills and how authentication or api calls work in frontend. Send me email for any issues or suggestions.",
+      data_usage: [
+        {
+          name: "Typicode (Jsonplaceholder)",
+          url: "https://jsonplaceholder.typicode.com/",
+          follow_social_sites: [
+            { name: "Github", url: "https://github.com/typicode" },
+            { name: "Twitter", url: "https://twitter.com/typicode" },
+          ],
+        },
+      ],
+      contact: {
+        email: "sethraj03@gmail.com",
+      },
+    },
+    servers: [
+      {
+        url: "https://indexapis.herokuapp.com/",
+      },
+    ],
+    paths: {
+      "/api/": {
+        get: {
+          description: "To get api specification for documentation",
+          produces: ["application/json"],
+          responses: {
+            "200": {
+              description: "Returns api specification",
+            },
+            "400": {
+              description: "Returns a JSON error object of API call",
+            },
+          },
+        },
+      },
+      "/api/login": {
+        get: {
+          description:
+            "Login to the application. Returns a JSON object of user details",
+          produces: ["application/json"],
+          responses: {
+            "200": {
+              description: "Returns a JSON object for login",
+            },
+          },
+        },
+      },
+      "/api/allUser": {
+        get: {
+          description: "To get all Users",
+          produces: ["application/json"],
+          responses: {
+            "200": {
+              description: "Returns a JSON object of all Users",
+            },
+            "400": {
+              description: "Returns a JSON error object of API call",
+            },
+          },
+        },
+      },
+      "/api/user/:userId": {
+        get: {
+          description: "To get a User by Id",
+          produces: ["application/json"],
+          responses: {
+            "200": {
+              description: "Returns a JSON object of a User",
+            },
+            "400": {
+              description: "Returns a JSON error object of API call",
+            },
+          },
+        },
+      },
+      "/api/get/Todo": {
+        get: {
+          description: "To get all Todos",
+          produces: ["application/json"],
+          responses: {
+            "200": {
+              description: "Returns a JSON object of all Todos",
+            },
+            "400": {
+              description: "Returns a JSON error object of API call",
+            },
+          },
+        },
+      },
+      "/api/get/Todo/:userId": {
+        get: {
+          description: "To get all Todos by User Id",
+          produces: ["application/json"],
+          parameters: [
+            {
+              name: "userId",
+              in: "params",
+              description: "Enter user id to get all Todos for user",
+              required: true,
+            },
+          ],
+          responses: {
+            "200": {
+              description: "Returns a JSON object of all Todos for user",
+            },
+            "400": {
+              description: "Returns a JSON error object of API call",
+            },
+          },
+        },
+      },
+      "/api/get/Post": {
+        get: {
+          description: "To get all Posts",
+          produces: ["application/json"],
+          responses: {
+            "200": {
+              description: "Returns a JSON object of all Posts",
+            },
+            "400": {
+              description: "Returns a JSON error object of API call",
+            },
+          },
+        },
+      },
+      "/api/get/Post/:userId": {
+        get: {
+          description: "To get all Posts by User Id",
+          parameters: [
+            {
+              name: "userId",
+              in: "params",
+              description: "Enter user id to get all Posts for user",
+              required: true,
+            },
+          ],
+          produces: ["application/json"],
+          responses: {
+            "200": {
+              description: "Returns a JSON object of all Posts for user",
+            },
+            "400": {
+              description: "Returns a JSON error object of API call",
+            },
+          },
+        },
+      },
+      "/api/get/Comment": {
+        get: {
+          description: "To get all Comments",
+          produces: ["application/json"],
+          responses: {
+            "200": {
+              description: "Returns a JSON object of all Comments",
+            },
+            "400": {
+              description: "Returns a JSON error object of API call",
+            },
+          },
+        },
+      },
+      "/api/get/Post/Comment/:postId": {
+        get: {
+          description: "To get all Comments by Post Id",
+          parameters: [
+            {
+              name: "postId",
+              in: "params",
+              description: "Enter post id to get all Comments for post",
+              required: true,
+            },
+          ],
+          produces: ["application/json"],
+          responses: {
+            "200": {
+              description: "Returns a JSON object of all Comments for post",
+            },
+            "400": {
+              description: "Returns a JSON error object of API call",
+            },
+          },
+        },
+      },
+      "/api/get/Comment/:userId": {
+        get: {
+          description: "To get all Comments by User Id",
+          parameters: [
+            {
+              name: "userId",
+              in: "params",
+              description: "Enter user id to get all Comments for user",
+              required: true,
+            },
+          ],
+          produces: ["application/json"],
+          responses: {
+            "200": {
+              description: "Returns a JSON object of all Comments for user",
+            },
+            "400": {
+              description: "Returns a JSON error object of API call",
+            },
+          },
+        },
+      },
+      "/api/get/States": {
+        get: {
+          description: "To get all States in India",
+          produces: ["application/json"],
+          responses: {
+            "200": {
+              description: "Returns a JSON object of all States in India",
+            },
+            "400": {
+              description: "Returns a JSON error object of API call",
+            },
+          },
+        },
+      },
+      "/api/get/State/:state": {
+        get: {
+          description: "To get all Cities in a State",
+          parameters: [
+            {
+              name: "state",
+              in: "params",
+              description: "Enter state to get all Cities in a State",
+              required: true,
+            },
+          ],
+          produces: ["application/json"],
+          responses: {
+            "200": {
+              description: "Returns a JSON object of all Cities in a State",
+            },
+            "400": {
+              description: "Returns a JSON error object of API call",
+            },
+          },
+        },
+      },
+      "/api/get/IP": {
+        get: {
+          description: "To get IP Address",
+          produces: ["application/json"],
+          responses: {
+            "200": {
+              description: "Returns a JSON object of IP Address",
+            },
+            "400": {
+              description: "Returns a JSON error object of API call",
+            },
+          },
+        },
+      },
+      "/api/serve": {
+        get: {
+          description:
+            "This API works as a proxy to serve the any targeted url. Can be used as a proxy to any other API and solve cors errors",
+          produces: ["application/json"],
+          headers: [
+            {
+              name: "Target_URL",
+              in: "key",
+              vale: "Targeted URL",
+              description: "Enter the URL to be served",
+              required: true,
+            },
+          ],
+          responses: {
+            "200": {
+              description: "Returns a JSON object of the response from the url",
+            },
+            "400": {
+              description: "Returns a JSON error object of API call",
+            },
+          },
+        },
+      },
+    },
+  };
+  res.status(200).json({ data });
+};

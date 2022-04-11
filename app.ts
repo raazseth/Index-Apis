@@ -5,6 +5,7 @@ import mongoose from "mongoose";
 import helmet from "helmet";
 import rateLimit from "express-rate-limit";
 import apicache from "apicache";
+import { api_Guide } from "./Controllers";
 
 const app = express();
 const PORT = 8080;
@@ -39,6 +40,6 @@ const TodoRoutes = require("./Routes/index");
 
 app.use("/api", AuthRoutes);
 app.use("/api", TodoRoutes);
-
+app.use("/", api_Guide);
 
 app.listen(PORT, () => console.log(`Server is listening at ${PORT} 🤡`));
