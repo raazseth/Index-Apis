@@ -342,7 +342,7 @@ export const api_Guide = (req: Request, res: Response) => {
         email: "sethraj03@gmail.com",
       },
     },
-    webkitURL: [
+    URLs: [
       {
         url: "https://indexapis.herokuapp.com/",
       },
