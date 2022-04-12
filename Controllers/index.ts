@@ -353,7 +353,7 @@ export const api_Guide = (req: Request, res: Response) => {
         },
       },
       "/api/login": {
-        get: {
+        post: {
           description:
             "Login to the application. Returns a JSON object of user details",
           produces: ["application/json"],
@@ -573,9 +573,9 @@ export const api_Guide = (req: Request, res: Response) => {
         },
       },
       "/api/serve": {
-        get: {
+        all: {
           description:
-            "This API works as a proxy to serve the any targeted url. Can be used as a proxy to any other API and solve cors errors",
+            "This API works as a proxy to serve the any targeted url. Works with any request method and can be used as a proxy to any other API and solve cors errors",
           produces: ["application/json"],
           headers: [
             {

@@ -8,7 +8,7 @@ import apicache from "apicache";
 import { api_Guide } from "./Controllers";
 
 const app = express();
-const PORT = 8080;
+const PORT = process.env["PORT"] || 5000;
 const cache = apicache.middleware;
 
 app.use(cors());
