@@ -11,6 +11,7 @@ import {
   getAllTodo,
   getCityByState,
   getIpDetails,
+  getOnlyStates,
   getPostComments,
   getTodoByUser,
   getUserComments,
@@ -19,14 +20,14 @@ import {
 } from "../Controllers";
 const router = express.Router();
 
-///Posts///
+///POST///
 
 router.post("/add/Todo", addTodo);
 router.post("/add/Post", addPosts);
 router.post("/add/Comment", addComment);
 router.post("/add/StateNCity", addStateNCity);
 
-///Get///
+///GET///
 
 router.get("/", api_Guide);
 router.get("/get/Todo", getAllTodo);
@@ -37,6 +38,7 @@ router.get("/get/Comment", getAllComments);
 router.get("/get/Post/Comment/:postId", getPostComments);
 router.get("/get/Comment/:userId", getUserComments);
 router.get("/get/States", getAllStatesNCities);
+router.get("/get/Only-States", getOnlyStates);
 router.get("/get/State/:state", getCityByState);
 router.get("/get/IP", getIpDetails);
 router.all("/serve", serveProxy);

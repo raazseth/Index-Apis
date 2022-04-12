@@ -266,6 +266,11 @@ export const getAllStatesNCities = async (req: Request, res: Response) => {
   res.status(200).json({ states });
 };
 
+export const getOnlyStates = async (req: Request, res: Response) => {
+  const states = await StateNCity.distinct("state");
+  res.status(200).json({ states });
+};
+
 export const getIpDetails = async (req: Request, res: Response) => {
   const IP: IIP = await axios.get("http://ip-api.com/json/");
   const IP_Details = await axios.get(
@@ -316,9 +321,14 @@ export const api_Guide = (req: Request, res: Response) => {
     info: {
       title: "INDEX_APIs",
       description:
-        "This is a collection of APIs that are used to perform CRUD operations on the database.",
-      why: "I wanted to create a collection of APIs that can be used to perform CRUD operations on the database to test thier skills and how authentication or api calls work in frontend. Send me email for any issues or suggestions.",
-      data_usage: [
+        "This is a collection of APIs that are used to perform CRUD operations on the database. All the APIs are secured and does not require authentication to access the APIs.",
+      why: "I wanted to create a collection of APIs that can be used to perform CRUD operations on the database to test skills and how authentication or api calls work in frontend as a junior developer. Send me email for any issues or suggestions.",
+      upcoming_updates: [
+        { 1: "Limit on api calls" },
+        { 2: "Require authentication to access apis" },
+        { 3: "Create a blog post on the APIs" },
+      ],
+      inspired_From: [
         {
           name: "Typicode (Jsonplaceholder)",
           url: "https://jsonplaceholder.typicode.com/",
@@ -332,7 +342,7 @@ export const api_Guide = (req: Request, res: Response) => {
         email: "sethraj03@gmail.com",
       },
     },
-    servers: [
+    webkitURL: [
       {
         url: "https://indexapis.herokuapp.com/",
       },
